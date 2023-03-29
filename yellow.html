@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Find the Color</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Choose the Color</h1>
+        <h2>Which color is yellow?</h2>
+        <h2>Errors: <span id="errors">0</span></h2>
+        <div class="color-palette">
+            <div class="color-option" style="background-color: rgb(255, 0, 0);"></div>
+            <div class="color-option" style="background-color: rgb(0, 255, 0);"></div>
+            <div class="color-option" style="background-color: rgb(0, 0, 255);"></div>
+            <div class="color-option" style="background-color: rgb(255, 255, 0);"></div>
+            <div class="color-option" style="background-color: rgb(128, 0, 128);"></div>
+            <div class="color-option" style="background-color: rgb(255, 102, 0);"></div>
+            <div class="color-option" style="background-color: rgb(255, 102, 178);"></div>
+        </div>
+        <button class="submit-button">Submit</button>
+    </div>
+    <p class="message" style="font-size: 20px;"></p>
+    <script src="script.js"></script>
+    <script>
+        var errors = 0;
+        submitButton.addEventListener('click', () => {
+            if (chosenColor) {
+                if (chosenColor === 'rgb(255, 255, 0)') {
+                    alert('Congratulations! you have found the yellow color!');
+                    setTimeout(myURL, 1500);
+                    function myURL() {
+                        document.location.href = 'purple.html';
+                    }
+                } else {
+                    errors += 1;
+                    document.getElementById("errors").innerText = errors;
+                    alert('Sorry, that is not the yellow color. Please try again!');
+                }
+            } else {
+                alert('Please choose a color before submitting!');
+            }
+        });
+    </script>
+</body>
+
+</html>
